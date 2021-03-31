@@ -1,3 +1,25 @@
 .container {
     width: 100%;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+
+.heading {
+    color: #47525E;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.textarea {
+    border: none;
+    background-color: #E6EEEA;
+    width: 100%;
+    height: 100px;
+}
+
+.add_post {
+    margin-right: 0;
+    margin-left: auto;
 }

@@ -14,4 +14,6 @@
     width: 10%;
     height: 100%;
     background: url("/src/assets/img/logo_transparent.png") no-repeat center/120%;
+    text-decoration: none;
+    font-size: 0;
 }

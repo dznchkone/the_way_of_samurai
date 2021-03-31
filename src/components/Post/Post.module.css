@@ -1,9 +1,29 @@
 .item {
-    text-transform: uppercase;
-    font-weight: bold;
+    display: flex;
+    flex-direction: column;
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.user_avatar_wrapper {
+    padding-left: 8px;
+}
+
+.user_message_wrapper {
+    padding-left: 24px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
 
 .user_avatar {
     width: 50px;
     border-radius: 50%;
+}
+.like {
+    margin-left: 8px;
 }

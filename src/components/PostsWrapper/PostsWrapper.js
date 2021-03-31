@@ -2,21 +2,21 @@ import React from "react";
 import Post from "../Post";
 
 
-import style from "./PostsWrapper.module.css"
+import s from "./PostsWrapper.module.css"
 
 
 
 const PostsWrapper = ()=> {
     return (
-        <div className={style.container}>
-            my posts
+        <div className={s.container}>
+            <p className={s.heading}>My posts</p>
             <div>
-                <textarea/>
-                <button>Создать</button>
+                <textarea className={s.textarea}/>
+                <button className={s.add_post}>Создать</button>
             </div>
             <div>
-                <Post id={1}/>
-                <Post id={2}/>
+                <Post message='Hi, how are you?' id={1} likes={10}/>
+                <Post message={`It's my first message`} id={2} likes={15}/>
             </div>
         </div>
     )
