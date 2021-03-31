@@ -1,0 +1,16 @@
+.content{
+    grid-area: content;
+    background-color: #ccff8c;
+}
+.header{
+    width: 100%;
+    margin: 0 auto;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.header-img {
+    max-width: 100%;
+    height: auto;
+
+}

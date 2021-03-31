@@ -1,0 +1,44 @@
+.nav{
+    grid-area: nav;
+    background-color: #42c4ec;
+    color: white;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-right: 5px;
+}
+
+.item {
+    padding-left: 10px;
+    border-bottom: solid 1px #2cb8e2;
+    margin-bottom: 5px;
+    min-height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.item:hover {
+    animation: hover_background 2s;
+    background-color: #3fbae0;
+}
+
+.nav a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: -1px 0 1px #2cb8e2, 0 1px 1px #2cb8e2, 1px 0 1px #2cb8e2, 0 -1px 1px #2cb8e2;
+}
+
+.blank_item {
+    box-shadow: none;
+    border-bottom: none;
+}
+.blank_item:hover {
+    background: none;
+}
+
+@keyframes hover_background {
+    0% {background-color: #42c4ec}
+}
