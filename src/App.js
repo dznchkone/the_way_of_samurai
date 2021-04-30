@@ -1,16 +1,32 @@
 import React from "react";
 
 import './App.css';
-import Header from './components/header';
-import Navbar from "./components/navbar";
-import Profile from "./components/profile";
+import Header from './components/Header';
+import Navbar from "./components/Navbar";
+import Profile from "./components/Profile";
+import DialogsWrapper from "./components/DialogsWrapper";
+import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+import News from "./components/News";
+import Music from "./components/Music";
+import Settings from "./components/Settings";
 
 function App() {
     return (
         <div className="app-wrapper">
-            <Header/>
-            <Navbar/>
-            <Profile/>
+            <Router>
+                <Header/>
+                <Navbar/>
+                <div className="app-wrapper-content">
+                    <Route path="/" exact={true} >
+                        <Redirect to="/profile"/>
+                    </Route>
+                    <Route component={Profile} path="/profile"/>
+                    <Route component={DialogsWrapper} path="/dialogs"/>
+                    <Route component={News} exact={true} path="/news"/>
+                    <Route component={Music} exact={true} path="/music"/>
+                    <Route component={Settings} exact={true} path="/settings"/>
+                </div>
+            </Router>
         </div>
     );
 }

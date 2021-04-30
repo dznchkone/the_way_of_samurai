@@ -5,7 +5,8 @@
     padding-top: 10px;
     padding-left: 8px;
     padding-right: 5px;
-    max-height: 900px;
+    max-height: 220px;
+    box-shadow: 1px 1px 2px #3c3c3c;
 }
 
 .item {
@@ -24,7 +25,7 @@
     background-color: #3fbae0;
 }
 
-.nav a{
+.link{
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -32,9 +33,17 @@
     text-shadow: -1px 0 1px #2cb8e2, 0 1px 1px #2cb8e2, 1px 0 1px #2cb8e2, 0 -1px 1px #2cb8e2;
 }
 
+.active {
+    color: #dddfe2;
+    text-shadow: -1px 0 2px #22b2dd, 0 1px 2px #22b2dd, 1px 0 2px #22b2dd, 0 -1px 2px #22b2dd;
+}
+
+
+
 .blank_item {
     box-shadow: none;
     border-bottom: none;
+    font-size: 0;
 }
 .blank_item:hover {
     background: none;
