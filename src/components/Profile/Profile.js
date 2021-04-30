@@ -8,7 +8,7 @@ import user_avatar from "../../assets/user_img/user_avatar.jpg";
 
 const Profile = () => {
     return (
-        <div className={s.content}>
+        <div className={s.wrapper}>
             <div className={s.header}>
                 <img className={s.header_img} src={header_img}
                      alt="profile header"/>
