@@ -1,9 +1,9 @@
 import React from "react";
 import s from "./Post.module.css"
 
-import avatar from "../../assets/user_img/user_avatar.jpg";
+import avatar from "../../../../assets/user_img/user_avatar.jpg";
 
-const Post = ({id, message, likes}) => {
+const Post = ({id, text, likesCount}) => {
     return (
         <div key={id} className={s.item}>
             <div className={s.wrapper}>
@@ -11,10 +11,10 @@ const Post = ({id, message, likes}) => {
                     <img className={s.user_avatar} src={avatar} alt="user"/>
                 </div>
                 <div className={s.user_message_wrapper}>
-                    {message}
+                    {text}
                 </div>
             </div>
-            <span className={s.like}>Likes: {likes} </span>
+            <span className={s.like}>Likes: {likesCount} </span>
         </div>
     )
 }
