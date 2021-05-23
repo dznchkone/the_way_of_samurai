@@ -10,18 +10,23 @@ import News from "./components/News";
 import Music from "./components/Music";
 import Settings from "./components/Settings";
 
-function App() {
+function App({appState}) {
     return (
         <div className="app-wrapper">
             <Router>
                 <Header/>
-                <Navbar/>
+                <Navbar state={appState.navbar}/>
                 <div className="app-wrapper-content">
-                    <Route path="/" exact={true} >
+                    <Route path="/" exact={true}>
                         <Redirect to="/profile"/>
                     </Route>
-                    <Route component={Profile} path="/profile"/>
-                    <Route component={Dialogs} path="/dialogs"/>
+                    <Route path="/profile" >
+                        <Profile state={appState.profilePage}/>
+                    </Route>
+                    <Route path="/dialogs" >
+                        <Dialogs state={appState.dialogsPage}/>
+                    </Route>
+
                     <Route component={News} exact={true} path="/news"/>
                     <Route component={Music} exact={true} path="/music"/>
                     <Route component={Settings} exact={true} path="/settings"/>

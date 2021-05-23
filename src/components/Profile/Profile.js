@@ -5,13 +5,11 @@ import PostsWrapper from "./PostsWrapper";
 import ProfileInfo from "./ProfileInfo";
 
 
-
-
-const Profile = (props) => {
+const Profile = ({state}) => {
     return (
         <div className={s.wrapper}>
-            <ProfileInfo/>
-            <PostsWrapper/>
+            <ProfileInfo />
+            <PostsWrapper posts={state.posts}/>
         </div>
     )
 }

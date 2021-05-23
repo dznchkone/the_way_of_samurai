@@ -1,11 +1,12 @@
 .nav{
     grid-area: nav;
-    background-color: #42c4ec;
     color: white;
-    padding-top: 10px;
-    padding-left: 8px;
-    padding-right: 5px;
-    max-height: 220px;
+
+}
+
+.wrapper {
+    padding: 10px 5px 10px 8px;
+    background-color: #42c4ec;
     box-shadow: 1px 1px 2px #3c3c3c;
 }
 
@@ -38,6 +39,20 @@
     text-shadow: -1px 0 2px #22b2dd, 0 1px 2px #22b2dd, 1px 0 2px #22b2dd, 0 -1px 2px #22b2dd;
 }
 
+.friendsWrapper {
+    padding-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.friendLink{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 
 
 .blank_item {
@@ -52,3 +67,4 @@
 @keyframes hover_background {
     0% {background-color: #42c4ec}
 }
+
