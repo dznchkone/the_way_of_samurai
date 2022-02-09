@@ -42,7 +42,7 @@
 .friendsWrapper {
     padding-top: 20px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-around;
 }
 
