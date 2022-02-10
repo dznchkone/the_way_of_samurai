@@ -6,6 +6,7 @@ import ProfileInfo from "./ProfileInfo";
 
 
 const Profile = ({state}) => {
+
     return (
         <div className={s.wrapper}>
             <ProfileInfo />

@@ -2,7 +2,7 @@ import React from 'react';
 import s from "./Navbar.module.css"
 import {NavLink} from "react-router-dom";
 
-const Navbar = ({state}) => {
+const Sidebar = ({state}) => {
 
     const friends = state.friends.map(friend => {
         return (<div key={friend.id}>
@@ -38,4 +38,4 @@ const Navbar = ({state}) => {
     )
 }
 
-export default Navbar;
+export default Sidebar;

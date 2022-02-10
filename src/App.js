@@ -2,7 +2,7 @@ import React from "react";
 
 import './App.css';
 import Header from './components/Header';
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Navbar";
 import Profile from "./components/Profile";
 import Dialogs from "./components/Dialogs";
 import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
@@ -10,21 +10,21 @@ import News from "./components/News";
 import Music from "./components/Music";
 import Settings from "./components/Settings";
 
-function App({appState}) {
+function App({state}) {
     return (
         <div className="app-wrapper">
             <Router>
                 <Header/>
-                <Navbar state={appState.navbar}/>
+                <Sidebar state={state.navbar}/>
                 <div className="app-wrapper-content">
                     <Route path="/" exact={true}>
                         <Redirect to="/profile"/>
                     </Route>
                     <Route path="/profile" >
-                        <Profile state={appState.profilePage}/>
+                        <Profile state={state.profilePage}/>
                     </Route>
                     <Route path="/dialogs" >
-                        <Dialogs state={appState.dialogsPage}/>
+                        <Dialogs state={state.dialogsPage}/>
                     </Route>
 
                     <Route component={News} exact={true} path="/news"/>
