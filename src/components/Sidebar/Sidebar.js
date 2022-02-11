@@ -1,12 +1,13 @@
 import React from 'react';
 import s from "./Navbar.module.css"
 import {NavLink} from "react-router-dom";
+import User from "../User";
 
 const Sidebar = ({state}) => {
 
     const friends = state.friends.map(friend => {
         return (<div key={friend.id}>
-            <a className={s.friendLink} href="/#">{friend.name}</a>
+            <User userName={friend.name} size={'m'}/>
         </div>)
     })
 

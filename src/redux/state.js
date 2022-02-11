@@ -25,8 +25,8 @@ const state = {
     navbar: {
         friends: [
             {id: 1, name: 'Ivan'},
-            {id: 1, name: 'Nastya'},
-            {id: 1, name: 'Garik'}
+            {id: 2, name: 'Nastya'},
+            {id: 3, name: 'Garik'}
         ]
     }
 };

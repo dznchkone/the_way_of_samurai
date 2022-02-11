@@ -42,17 +42,9 @@
 .friendsWrapper {
     padding-top: 20px;
     display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
-
-.friendLink{
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
 
 
 .blank_item {
