@@ -7,7 +7,7 @@ const Sidebar = ({state}) => {
 
     const friends = state.friends.map(friend => {
         return (<div key={friend.id}>
-            <User userName={friend.name} size={'m'}/>
+            <User userName={friend.name} size={'s'}/>
         </div>)
     })
 

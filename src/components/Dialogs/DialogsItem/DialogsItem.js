@@ -8,11 +8,14 @@ const DialogsItem = ({name, id}) => {//Деструктурируем пропс
 
     return (
         <div key={id} className={s.dialogs_item}>
-            <User>
-            <NavLink to={`/dialogs/${id}`}>
-                {name}
-            </NavLink>
-            </User>
+            <User size={'s'} />
+            <div className={s.dialogs_item_link_wrapper}>
+                <NavLink  to={`/dialogs/${id}`}>
+                    {name}
+                </NavLink>
+            </div>
+
+
         </div>
     )
 }

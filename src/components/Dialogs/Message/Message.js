@@ -8,7 +8,7 @@ const Message = ({id,message_sender, text}) => {
 
     return (
         <div key={id} className={`${s.messages_item} ${left}`}>
-            <User userName={message_sender} />
+            <User size={'m'} userName={message_sender} />
             <p className={s.message}>{text}</p>
         </div>
     )
