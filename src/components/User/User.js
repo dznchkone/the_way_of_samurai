@@ -7,7 +7,6 @@ const User = (props) => {
     const {size} = props;
     const imgSize = 'user_avatar-'+size;
     const fontSize = 'friend_link-'+size
-    console.log(size)
     return (
         <div className={s.user_wrapper}>
             <img className={`${s.user_avatar} ${s[imgSize]}`} src={user_avatar} alt="user"/>

@@ -10,7 +10,11 @@ import News from "./components/News";
 import Music from "./components/Music";
 import Settings from "./components/Settings";
 
-function App({state}) {
+function App(props) {
+    const {store} = props;
+
+    const state = store.getState();
+
     return (
         <div className="app-wrapper">
             <Router>
@@ -21,10 +25,10 @@ function App({state}) {
                         <Redirect to="/profile"/>
                     </Route>
                     <Route path="/profile" >
-                        <Profile state={state.profilePage}/>
+                        <Profile state={state.profilePage} addPost={store.addPost.bind(store)} updateNewPost={store.updateNewPostText.bind(store)}/>
                     </Route>
                     <Route path="/dialogs" >
-                        <Dialogs state={state.dialogsPage}/>
+                        <Dialogs state={state.dialogsPage} addNewMessage={store.addNewMessage.bind(store)} updateNewMessageText={store.updateNewMessageText.bind(store)}/>
                     </Route>
 
                     <Route component={News} exact={true} path="/news"/>

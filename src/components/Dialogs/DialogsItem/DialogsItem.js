@@ -7,7 +7,7 @@ import User from "../../User";
 const DialogsItem = ({name, id}) => {//Деструктурируем пропсы сразу на переменные, т.к. знаем что придет в компонент.
 
     return (
-        <div key={id} className={s.dialogs_item}>
+        <div className={s.dialogs_item}>
             <User size={'s'} />
             <div className={s.dialogs_item_link_wrapper}>
                 <NavLink  to={`/dialogs/${id}`}>

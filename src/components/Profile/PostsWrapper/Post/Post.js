@@ -3,9 +3,9 @@ import s from "./Post.module.css"
 
 import avatar from "../../../../assets/user_img/user_avatar.jpg";
 
-const Post = ({id, text, likesCount}) => {
+const Post = ({text, likesCount}) => {
     return (
-        <div key={id} className={s.item}>
+        <div className={s.item}>
             <div className={s.wrapper}>
                 <div className={s.user_avatar_wrapper}>
                     <img className={s.user_avatar} src={avatar} alt="user"/>
