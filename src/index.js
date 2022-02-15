@@ -1,5 +1,5 @@
 import React from 'react';
-import {store} from "./redux/store";
+import store from "./redux/store";
 import ReactDOM from "react-dom";
 import App from "./App";
 import 'normalize.css';
@@ -15,7 +15,9 @@ const rerenderEntireTree = () => {
     );
 }
 rerenderEntireTree();
-store.subscribe(rerenderEntireTree);
+store.subscribe(()=> {
+    rerenderEntireTree();
+});
 
 
 

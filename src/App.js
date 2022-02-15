@@ -25,10 +25,10 @@ function App(props) {
                         <Redirect to="/profile"/>
                     </Route>
                     <Route path="/profile" >
-                        <Profile state={state.profilePage} addPost={store.addPost.bind(store)} updateNewPost={store.updateNewPostText.bind(store)}/>
+                        <Profile state={state.profilePage} dispatch={store.dispatch.bind(store)}/>
                     </Route>
                     <Route path="/dialogs" >
-                        <Dialogs state={state.dialogsPage} addNewMessage={store.addNewMessage.bind(store)} updateNewMessageText={store.updateNewMessageText.bind(store)}/>
+                        <Dialogs state={state.dialogsPage} dispatch={store.dispatch.bind(store)}/>
                     </Route>
 
                     <Route component={News} exact={true} path="/news"/>

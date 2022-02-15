@@ -7,14 +7,13 @@ import ProfileInfo from "./ProfileInfo";
 
 
 const Profile = (props) => {
-    const {state,addPost, updateNewPost} = props;
+    const {state,dispatch} = props;
 
     return (
         <div className={s.wrapper}>
             <ProfileInfo />
             <PostsWrapper posts={state.posts}
-                          addPost={addPost}
-                          updateNewPost={updateNewPost}
+                          dispatch={dispatch}
                           newPostText={state.newPostText}
             />
         </div>

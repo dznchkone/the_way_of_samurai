@@ -2,11 +2,12 @@ import React from "react";
 import s from "./Dialogs.module.css";
 import DialogsItem from "./DialogsItem";
 import Message from "./Message";
+import {addNewMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 
 
 const Dialogs = (props) => {
 
-    const {state, addNewMessage, updateNewMessageText} = props;
+    const {state, dispatch} = props;
 
     const dialogsElements = state.dialogs.map(item => <DialogsItem key={item.id} name={item.name} id={item.id}/>);
     const messagesElements = state.messages.map(({id, message_sender, text}) => <Message key={id}  message_sender={message_sender}
@@ -14,12 +15,12 @@ const Dialogs = (props) => {
     let messageText = React.createRef();
 
     const sendMessage = () => {
-        addNewMessage('Me');
+        dispatch(addNewMessageActionCreator('Me'))
     }
 
-    const updateMessageText = () => {
-        let text = messageText.current.value;
-        updateNewMessageText(text);
+    const updateMessageText = (e) => {
+        let text = e.target.value;
+        dispatch(updateNewMessageTextActionCreator(text))
     }
 
 

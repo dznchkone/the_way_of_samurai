@@ -3,24 +3,26 @@ import Post from "./Post";
 
 
 import s from "./PostsWrapper.module.css"
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
+
 
 
 
 const PostsWrapper = (props) => {
 
-    const {posts,newPostText,updateNewPost} = props;
+    const {posts, dispatch, newPostText} = props;
     const postsElements = posts.sort((a,b)=>b.id-a.id).map(({id, text, likesCount}) => <Post key={id} text={text} likesCount={likesCount}/>);
 
     
     let postText = React.createRef();
     
     const addPost = () => {
-        props.addPost();
+        dispatch(addPostActionCreator());
     }
 
-    const onChangeValue = () => {
-        let text = postText.current.value;
-        updateNewPost(text)
+    const onChangeValue = (e) => {
+        let text = e.target.value;
+        dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (
