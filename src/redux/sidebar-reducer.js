@@ -12,10 +12,12 @@ const initialState = {
     ]
 }
 
+// noinspection JSUnusedLocalSymbols
 const sidebarReducer = (state = initialState, action) => {
-
-
-    return state;
+    switch (action.type) {
+        default:
+            return state;
+    }
 }
 
 export default sidebarReducer;

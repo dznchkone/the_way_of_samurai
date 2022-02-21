@@ -9,15 +9,16 @@ const User = (props) => {
     const fontSize = 'friend_link-'+size
     return (
         <div className={s.user_wrapper}>
-            <img className={`${s.user_avatar} ${s[imgSize]}`} src={user_avatar} alt="user"/>
-            <p className={`${s.friend_link} ${s[fontSize]}`} >{props.userName}</p>
+            <img className={`${s.user_avatar} ${s[imgSize]}`} src={props.user_image ? props.user_image : user_avatar} alt="user"/>
+            {props.name.length !== 0 ? <p className={`${s.friend_link} ${s[fontSize]}`}>{props.name}</p>: null}
             {props.children? props.children:null}
         </div>
     )
 }
 
 User.propTypes = {
-    size: PropTypes.string.isRequired
+    size: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
 }
 
 export default User;

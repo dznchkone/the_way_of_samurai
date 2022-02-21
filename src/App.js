@@ -2,35 +2,35 @@ import React from "react";
 
 import './App.css';
 import Header from './components/Header';
-import Sidebar from "./components/Sidebar";
+import SidebarContainer from "./components/Sidebar/SidebarContainer";
 import Profile from "./components/Profile";
-import Dialogs from "./components/Dialogs";
 import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import News from "./components/News";
 import Music from "./components/Music";
 import Settings from "./components/Settings";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 function App(props) {
-    const {store} = props;
-
-    const state = store.getState();
 
     return (
         <div className="app-wrapper">
             <Router>
                 <Header/>
-                <Sidebar state={state.navbar}/>
+                <SidebarContainer/>
                 <div className="app-wrapper-content">
                     <Route path="/" exact={true}>
                         <Redirect to="/profile"/>
                     </Route>
                     <Route path="/profile" >
-                        <Profile state={state.profilePage} dispatch={store.dispatch.bind(store)}/>
+                        <Profile />
                     </Route>
                     <Route path="/dialogs" >
-                        <Dialogs state={state.dialogsPage} dispatch={store.dispatch.bind(store)}/>
+                        <DialogsContainer/>
                     </Route>
-
+                    <Route path='/users'>
+                        <UsersContainer/>
+                    </Route>
                     <Route component={News} exact={true} path="/news"/>
                     <Route component={Music} exact={true} path="/music"/>
                     <Route component={Settings} exact={true} path="/settings"/>
