@@ -19,6 +19,7 @@ const Users = (props) => {
                     if (totalCount === 0) setTotalCount(data["totalCount"]);
                 });
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[page,count,setUsers])
 
     let pagesCount = Math.ceil(totalCount/props.count);
