@@ -3,7 +3,7 @@ import React from "react";
 import './App.css';
 import Header from './components/Header';
 import SidebarContainer from "./components/Sidebar/SidebarContainer";
-import Profile from "./components/Profile";
+import ProfileContainer from "./components/Profile";
 import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import News from "./components/News";
 import Music from "./components/Music";
@@ -22,8 +22,8 @@ function App(props) {
                     <Route path="/" exact={true}>
                         <Redirect to="/profile"/>
                     </Route>
-                    <Route path="/profile" >
-                        <Profile />
+                    <Route path="/profile/:id?" >
+                        <ProfileContainer />
                     </Route>
                     <Route path="/dialogs" >
                         <DialogsContainer/>

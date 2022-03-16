@@ -4,8 +4,11 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 
 
 const mapStateToProps = (state)=>{
+    let photo = state.profilePage.profile? state.profilePage.profile.photos.small : null;
     return {
-        state: state.profilePage
+        photo: state.profilePage.profile.photos.small,
+        posts: state.profilePage.posts,
+        newPostText: state.profilePage.newPostText
     }
 }
 

@@ -6,8 +6,8 @@ import s from "./PostsWrapper.module.css"
 
 const Posts = (props) => {
 
-    const {state} = props;
-    const postsElements = state.posts.sort((a,b)=>b.id-a.id).map(({id, text, likesCount}) => <Post key={id} text={text} likesCount={likesCount}/>);
+    const {posts, newPostText} = props;
+    const postsElements = posts.sort((a,b)=>b.id-a.id).map(({id, text, likesCount}) => <Post key={id} text={text} likesCount={likesCount} photo={props.photo}/>);
 
     
     let postText = React.createRef();
@@ -25,7 +25,7 @@ const Posts = (props) => {
         <div className={s.container}>
             <p className={s.heading}>My posts</p>
             <div className={s.add_post_wrapper}>
-                <textarea maxLength="200" className={s.textarea} ref={postText} value={state.newPostText} onChange={onChangeValue}/>
+                <textarea maxLength="200" className={s.textarea} ref={postText} value={newPostText} onChange={onChangeValue}/>
                 <button className={s.add_post_button} onClick={addPost}>Send</button>
             </div>
             <div className={s.posts}>

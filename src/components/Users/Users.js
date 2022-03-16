@@ -2,6 +2,7 @@ import React from "react";
 import User from "../User";
 
 import s from './Users.module.css'
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
 
@@ -25,7 +26,8 @@ const Users = (props) => {
             {props.state.map(user => {
                 return (
                     <div key={user.id}>
-                        <User size={'m'} user_image={user.photos.small} name={user.name}>
+                        <User size={'m'} user_image={user.photos.small}>
+                            <NavLink to={`/profile/${user.id}`}>{user.name}</NavLink>
                             <button
                                 onClick={() => props.toggleFollow(user.id)}>{user.followed ? 'unfollow' : 'follow'}</button>
                         </User>

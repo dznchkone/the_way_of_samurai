@@ -10,7 +10,7 @@ const User = (props) => {
     return (
         <div className={s.user_wrapper}>
             <img className={`${s.user_avatar} ${s[imgSize]}`} src={props.user_image ? props.user_image : user_avatar} alt="user"/>
-            {props.name.length !== 0 ? <p className={`${s.friend_link} ${s[fontSize]}`}>{props.name}</p>: null}
+            {props.name ? <p className={`${s.friend_link} ${s[fontSize]}`}>{props.name}</p>: null}
             {props.children? props.children:null}
         </div>
     )
@@ -18,7 +18,6 @@ const User = (props) => {
 
 User.propTypes = {
     size: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
 }
 
 export default User;
